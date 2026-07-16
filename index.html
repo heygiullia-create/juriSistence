@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <!-- ================================================== -->
+    <!-- CONFIGURAÇÕES DA PÁGINA -->
+    <!-- ================================================== -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JuriSistence</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================================================== -->
+    <!-- CABEÇALHO -->
+    <!-- ================================================== -->
+
+    <div class="titulo">
+
+        <div class="menu-chat">
+
+            <button id="btn-menu-chat" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div id="menu-chat-opcoes" class="menu-chat-opcoes">
+                <button id="btn-novo-chat">Novo chat</button>
+            </div>
+
+        </div>
+
+        <img src="balança.jpeg" width="30" alt="Balança">
+
+        <h3>JuriSistence</h3>
+
+    </div>
+
+
+
+    <!-- ================================================== -->
+    <!-- ÁREA DE RESPOSTAS DO SISTEMA / IA -->
+    <!-- ================================================== -->
+
+    <div id="chat-container">
+
+        <!--
+            AS RESPOSTAS DA IA
+            SÃO INSERIDAS AQUI PELO script.js.
+        -->
+
+    </div>
+
+
+    <!-- ================================================== -->
+    <!-- STATUS DA CONSULTA (pensando / consultando / cronômetro) -->
+    <!-- ================================================== -->
+
+    <div id="status-consulta" style="display: none;">
+
+        <span id="status-texto"></span>
+        <span id="status-tempo" style="display: none;">(<span id="contador">0</span>s)</span>
+
+    </div>
+
+
+
+    <!-- ================================================== -->
+    <!-- ÁREA DE ENVIO DO USUÁRIO -->
+    <!-- ================================================== -->
+
+    <div class="chat">
+
+        <textarea
+            id="conte"
+            name="conte"
+            rows="1"
+            spellcheck="false"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            placeholder="Digite sua mensagem..."></textarea>
+            <!-- botão para beckend-->
+        <button id="btn-enviar">
+           ➤
+        </button>    
+
+    </div>
+
+<!-- ================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ================================================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

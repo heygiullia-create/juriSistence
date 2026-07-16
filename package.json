@@ -1,0 +1,22 @@
+{
+  "name": "jurisistence",
+  "version": "2.0.0",
+  "description": "Agente de pesquisa jurídica com Gemini (planner + report) e fontes oficiais gratuitas (LexML, Planalto)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cheerio": "^1.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "undici": "^6.19.8",
+    "zod": "^3.24.1"
+  }
+}
