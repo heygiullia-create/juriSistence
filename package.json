@@ -4,6 +4,7 @@
   "description": "Agente de pesquisa jurídica com Gemini (planner + report) e fontes oficiais gratuitas (LexML, Planalto)",
   "main": "server.js",
   "scripts": {
+    "build": "node -e \"console.log('No build step required')\"",
     "start": "node server.js",
     "dev": "node server.js"
   },
