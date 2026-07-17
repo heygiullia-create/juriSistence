@@ -9,42 +9,8 @@ const sourceRegistry = require("../providers/sourceRegistry");
 const extractor = require("./extractor");
 const validator = require("./validator");
 const reportGenerator = require("./reportGenerator");
-const { modoRapido } = require("../config");
-
-function montarPlanoRapido(pergunta) {
-    return {
-        area: "Direito brasileiro",
-        fontes: ["Planalto", "LexML Brasil"],
-        palavrasChave: [pergunta],
-        termosAlternativos: [],
-        leisSugeridas: [],
-        temasJuridicos: [{
-            descricao: pergunta,
-            papel: "central",
-            fatosRelevantes: [],
-            institutosJuridicos: [],
-            fontes: ["Planalto", "LexML Brasil"],
-            termosDeBusca: [pergunta]
-        }],
-        estrategiaPesquisa: "Modo rapido: resposta preliminar sem busca automatica extensa."
-    };
-}
 
 async function processarPergunta(pergunta) {
-    if (modoRapido) {
-        const plano = montarPlanoRapido(pergunta);
-        const relatorio = await reportGenerator.gerarRelatorio(pergunta, plano, []);
-
-        return {
-            resposta: relatorio,
-            plano,
-            fontesConsultadas: [],
-            semResultados: true,
-            fontesIndisponiveis: false,
-            fontesSubstituidas: true
-        };
-    }
-
     // 1) Planejamento: decide o que pesquisar e onde.
     const plano = await planner.planejar(pergunta);
 

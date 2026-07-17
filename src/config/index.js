@@ -14,8 +14,6 @@ function limparModeloOpenRouter(valor) {
     return modelo.replace(/^OPENROUTER_MODEL\s*=\s*/i, "");
 }
 module.exports = {
-    modoRapido: String(process.env.MODO_RAPIDO || "true").toLowerCase() !== "false",
-
     gemini: {
         apiKey: process.env.GEMINI_API_KEY,
         model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
