@@ -10,8 +10,9 @@
 const lexmlProvider = require("./lexmlProvider");
 const planaltoProvider = require("./planaltoProvider");
 const jurisprudenciaProvider = require("./jurisprudenciaProvider");
+const { pesquisa } = require("../config");
 
-const LIMITE_TEMAS_PESQUISA = 5;
+const LIMITE_TEMAS_PESQUISA = pesquisa.limiteTemas;
 
 const FONTES_OFICIAIS_FALLBACK = [
     {

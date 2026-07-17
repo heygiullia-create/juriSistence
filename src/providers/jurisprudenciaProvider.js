@@ -9,8 +9,8 @@
 ================================================== */
 const lexmlProvider = require("./lexmlProvider");
 
-const MAX_RESULTADOS = 8;
-const MAX_TERMOS = 5;
+const MAX_RESULTADOS = 4;
+const MAX_TERMOS = 2;
 
 function limparTexto(texto = "") {
     return String(texto || "").replace(/\s+/g, " ").trim();
@@ -60,7 +60,7 @@ async function buscarTermo(termo, nomeFonte = "") {
 }
 
 async function search(palavrasChave = [], nomesFontes = []) {
-    const fontes = nomesFontes.map(limparTexto).filter(Boolean).slice(0, 4);
+    const fontes = nomesFontes.map(limparTexto).filter(Boolean).slice(0, 2);
     const termos = termosDeBusca(palavrasChave);
     const resultados = [];
 

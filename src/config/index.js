@@ -37,9 +37,9 @@ module.exports = {
     },
 
     http: {
-        timeoutMs: 8000,
-        maxRetries: 2,
-        retryDelayMs: 500,
+        timeoutMs: Number(process.env.HTTP_TIMEOUT_MS || 3500),
+        maxRetries: Number(process.env.HTTP_MAX_RETRIES || 0),
+        retryDelayMs: Number(process.env.HTTP_RETRY_DELAY_MS || 300),
         userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
     },
 
@@ -58,10 +58,14 @@ module.exports = {
 
     // Tamanho mÃ¡ximo (em caracteres) de cada trecho de documento
     // enviado ao Gemini na 2Âª chamada, para controlar custo/latÃªncia.
-    limiteCaracteresPorDocumento: 4000,
+    limiteCaracteresPorDocumento: Number(process.env.LIMITE_CARACTERES_POR_DOCUMENTO || 1800),
 
     // Quantidade mÃ¡xima de documentos que seguem para o relatÃ³rio final.
-    limiteDocumentosRelatorio: 14
+    limiteDocumentosRelatorio: Number(process.env.LIMITE_DOCUMENTOS_RELATORIO || 6),
+
+    pesquisa: {
+        limiteTemas: Number(process.env.LIMITE_TEMAS_PESQUISA || 2)
+    }
 };
 
 
